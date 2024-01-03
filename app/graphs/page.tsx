@@ -2,9 +2,12 @@
 
 import React from "react";
 import Graph from "../../components/graph";
+import Card from "../../components/Card"
 
 
 const Graphs: React.FC = (props) =>   {
+
+    const contentType:String = "graph"
 
     const data:Array<any> = [
         { time: '2018-12-22', value: 32.51 },
@@ -53,16 +56,11 @@ const Graphs: React.FC = (props) =>   {
     { time: '2018-12-31', value: 22.67 },]
 
     const datas:Array<any> = [data,data2,data3,data4]
-    const options = {
-
-    }
-
 
     return(
         <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-
             {datas.map((data)=>(
-                <Graph key={data[1].time} data={data} />
+                <Card key={data[1].time} contentType={contentType} dataToRender={data} />
             ))}
         </div>
     )

@@ -77,13 +77,12 @@ const DynamicGraph: React.FC<DynamicGraph> = (props) => {
         };
     }, [data, colors.backgroundColor, colors.lineColor, colors.textColor, colors.areaTopColor, colors.areaBottomColor]);
 
-    return <div className='w-auto  h-auto'>
-        <div ref={chartContainerRef} className=' w-auto h-auto p-5 border-blue-600 border-2 rounded-xl bg-white shadow-2xl shadow-blue-500' >
-            <div className='absolute z-10 text-black'>
-            <p> ProdcutoX</p>
+    return (<div ref={chartContainerRef} className='p-5' >
+                <div className='absolute z-10 text-black'>
+                <p> ProdcutoX</p>
+                </div>
             </div>
-        </div>
-        </div>
+    )
 
 };
 
