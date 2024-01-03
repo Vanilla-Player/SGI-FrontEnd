@@ -1,32 +1,28 @@
-import { useState } from 'react';
-
 const LoginForm: React.FC = () => {
-
   return (
-    <form className='flex flex-col shadow-2xl drop-shadow-2xl rounded-md w-auto items-center justify-center h-auto from-emerald-800 bg-gradient-to-r to-sky-900'>
-      <p className='text-2xl p-8 '>Inmersive Experience</p>
+    <form className="flex h-auto w-auto flex-col items-center justify-center rounded-md bg-gradient-to-r from-emerald-800 to-sky-900 shadow-2xl drop-shadow-2xl">
+      <p className="p-8 text-2xl ">Inmersive Experience</p>
       <div>
         <input
           type="text"
           id="username"
-          placeholder='Username'
-          className='bg-transparent py-1'
+          placeholder="Username"
+          className="bg-transparent py-1"
         />
       </div>
       <div>
         <input
           type="password"
           id="password"
-          placeholder='Password'
-          className='bg-transparent border-y-2 py-1'
+          placeholder="Password"
+          className="border-y-2 bg-transparent py-1"
         />
       </div>
-      <div className='flex w-full h-auto justify-between mt-2 p-1 align-middle text-sm px-14 py-5'>
-      <button type="submit" className='border-2 py-1 rounded-md px-4'>Login</button>
-      <p className='py-1 '>
-        Forgot?
-      </p>
-
+      <div className="mt-2 flex h-auto w-full justify-between p-1 px-14 py-5 align-middle text-sm">
+        <button type="submit" className="rounded-md border-2 px-4 py-1">
+          Login
+        </button>
+        <p className="py-1 ">Forgot?</p>
       </div>
     </form>
   );
