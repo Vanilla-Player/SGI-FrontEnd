@@ -62,9 +62,9 @@ const Graphs: React.FC = () => {
 
   return (
     <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-      {datas.map((data) => (
+      {datas.map((data, index) => (
         <Card
-          key={data[1].time}
+          key={data[index].time}
           contentType={contentType}
           dataToRender={data}
         />

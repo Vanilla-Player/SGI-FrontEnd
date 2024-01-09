@@ -34,17 +34,16 @@ const DynamicGraph: React.FC<DynamicGraph> = (props) => {
     ];
 
     const handleResize = () => {
-      chart.applyOptions({ width: 250 });
+      chart.applyOptions({ width: chartContainerRef.current.width });
       //chart.applyOptions({ width: chartContainerRef.current.clientWidth }); -> Me agranda mucho la grafica y me la saca de posicion
     };
-
     const chart = createChart(chartContainerRef.current, {
       layout: {
         background: { type: ColorType.Solid, color: colors.backgroundColor },
         textColor: colors.textColor,
       },
-      width: 250,
-      height: 200,
+      width: chartContainerRef.current.width,
+      height: chartContainerRef.current.height,
     });
 
     chart.timeScale().fitContent();
@@ -80,10 +79,11 @@ const DynamicGraph: React.FC<DynamicGraph> = (props) => {
   ]);
 
   return (
-    <div ref={chartContainerRef} className="p-5">
-      <div className="absolute z-10 text-black">
-        <p> ProdcutoX</p>
+    <div className="h-full w-full">
+      <div className="absolute z-10 flex text-black">
+        <p> ProdcutoX </p>
       </div>
+      <div className="h-full w-full" ref={chartContainerRef} />
     </div>
   );
 };

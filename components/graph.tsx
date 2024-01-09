@@ -1,4 +1,5 @@
 import DynamicGraph from "./DynamicGrapgh";
+import Link from "next/link";
 
 interface Graph {
   data: Array<any>;
@@ -7,8 +8,16 @@ interface Graph {
 const Graph: React.FC<Graph> = (props) => {
   const { data } = props;
   return (
-    <div className="h-[250px] w-[300px]">
+    <div className="h-[200px] w-[275px] p-5">
       <DynamicGraph data={data} />
+      <div className="relative bottom-3 z-10  flex justify-end ">
+        <Link
+          className="border-2 border-black text-base text-black"
+          href={`graphs/1`}
+        >
+          See Graph
+        </Link>
+      </div>
     </div>
   );
 };

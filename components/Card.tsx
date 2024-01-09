@@ -1,5 +1,5 @@
 import React from "react";
-import DynamicGraph from "./DynamicGrapgh";
+import Graph from "./graph";
 
 interface Card {
   contentType: string;
@@ -12,7 +12,7 @@ const Card: React.FC<Card> = (props) => {
 
   switch (contentType) {
     case "graph":
-      contenToRender = <DynamicGraph data={dataToRender} />;
+      contenToRender = <Graph data={dataToRender} />;
       break;
     case "order":
       contenToRender;
@@ -29,7 +29,7 @@ const Card: React.FC<Card> = (props) => {
 
   return (
     <div className="h-[250px] w-[300px]">
-      <div className="rounded-xl border-2 border-blue-600 bg-white shadow-2xl shadow-blue-500">
+      <div className="flex justify-center rounded-xl border-2 border-blue-600 bg-white shadow-2xl shadow-blue-500">
         {contenToRender}
       </div>
     </div>
