@@ -16,8 +16,10 @@ const Page = ({ params }: { params: { id: string } }) => {
   ];
   const { id } = params;
   return (
-    <div className="h-[500px]">
-      <DynamicGraph data={data} />
+    <div className="h-screen w-screen">
+      <div className="h-2/3 w-3/4">
+        <DynamicGraph data={data} />
+      </div>
       <div>
         <p>Promedio</p>
         <p>Total</p>

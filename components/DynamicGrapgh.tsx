@@ -35,7 +35,6 @@ const DynamicGraph: React.FC<DynamicGraph> = (props) => {
 
     const handleResize = () => {
       chart.applyOptions({ width: chartContainerRef.current.width });
-      //chart.applyOptions({ width: chartContainerRef.current.clientWidth }); -> Me agranda mucho la grafica y me la saca de posicion
     };
     const chart = createChart(chartContainerRef.current, {
       layout: {
