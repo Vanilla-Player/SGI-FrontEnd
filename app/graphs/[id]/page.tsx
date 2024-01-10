@@ -16,15 +16,23 @@ const Page = ({ params }: { params: { id: string } }) => {
   ];
   const { id } = params;
   return (
-    <div className="h-screen w-screen">
-      <div className="h-2/3 w-3/4">
+    <div className="flex h-screen w-screen justify-center p-2">
+      <div className="h-2/3 w-3/4 rounded-xl border-2 border-blue-600 bg-white p-5 shadow-2xl shadow-blue-500 ">
         <DynamicGraph data={data} />
-      </div>
-      <div>
-        <p>Promedio</p>
-        <p>Total</p>
-        <p>Diferencia</p>
-        <p>{id}</p>
+        <div className="mt-10 flex justify-between">
+          <p className=" rounded-xl border-2 border-blue-600 bg-white p-5 text-black shadow-2xl shadow-blue-500">
+            Promedio
+          </p>
+          <p className="rounded-xl border-2 border-blue-600 bg-white p-5 text-black shadow-2xl shadow-blue-500">
+            Total
+          </p>
+          <p className="rounded-xl border-2 border-blue-600 bg-white p-5 text-black shadow-2xl shadow-blue-500">
+            Diferencia
+          </p>
+          <p className="rounded-xl border-2 border-blue-600 bg-white p-5 text-black shadow-2xl shadow-blue-500">
+            {id}
+          </p>
+        </div>
       </div>
     </div>
   );

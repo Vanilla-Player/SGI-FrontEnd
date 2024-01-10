@@ -5,7 +5,6 @@ interface DynamicGraph {
   data: Array<any>;
 }
 
-// Create a new component that uses useRef and useEffect
 const DynamicGraph: React.FC<DynamicGraph> = (props) => {
   const colors = {
     backgroundColor: "white",
@@ -34,7 +33,15 @@ const DynamicGraph: React.FC<DynamicGraph> = (props) => {
     ];
 
     const handleResize = () => {
-      chart.applyOptions({ width: chartContainerRef.current.width });
+      const containerWidth = chartContainerRef.current.clientWidth;
+      const containerHeight = chartContainerRef.current.clientHeight;
+
+      chart.applyOptions({
+        width: containerWidth,
+        height: containerHeight,
+      });
+
+      chart.timeScale().fitContent();
     };
     const chart = createChart(chartContainerRef.current, {
       layout: {
