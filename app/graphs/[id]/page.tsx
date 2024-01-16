@@ -1,7 +1,7 @@
 "use client";
 import DynamicGraph from "@/components/DynamicGrapgh";
 
-const Page = ({ params }: { params: { id: string } }) => {
+const Page = ({}: { params: { id: string } }) => {
   const data: Array<any> = [
     { time: "2018-12-22", value: 32.51 },
     { time: "2018-12-23", value: 31.11 },
@@ -14,24 +14,30 @@ const Page = ({ params }: { params: { id: string } }) => {
     { time: "2018-12-30", value: 22.68 },
     { time: "2018-12-31", value: 22.67 },
   ];
-  const { id } = params;
+  const stock = 22;
+  const prediccion = 32;
+  const diferencia = stock - prediccion;
+
   return (
     <div className="flex h-screen w-screen justify-center p-2">
       <div className="h-2/3 w-3/4 rounded-xl border-2 border-blue-600 bg-white p-5 shadow-2xl shadow-blue-500 ">
         <DynamicGraph data={data} />
         <div className="mt-10 flex justify-between">
-          <p className=" rounded-xl border-2 border-blue-600 bg-white p-5 text-black shadow-2xl shadow-blue-500">
-            Promedio
+          <p className="rounded-xl border-2 border-blue-600 bg-white p-5 text-black shadow-2xl shadow-blue-500">
+            Stock: {stock}
           </p>
           <p className="rounded-xl border-2 border-blue-600 bg-white p-5 text-black shadow-2xl shadow-blue-500">
-            Total
+            Prediccion: {prediccion}
           </p>
-          <p className="rounded-xl border-2 border-blue-600 bg-white p-5 text-black shadow-2xl shadow-blue-500">
-            Diferencia
-          </p>
-          <p className="rounded-xl border-2 border-blue-600 bg-white p-5 text-black shadow-2xl shadow-blue-500">
-            {id}
-          </p>
+          {diferencia < 0 ? (
+            <p className="rounded-xl border-2 border-blue-600 bg-white p-5 text-red-500 shadow-2xl shadow-blue-500">
+              Diferencia: {stock - prediccion}
+            </p>
+          ) : (
+            <p className="rounded-xl border-2 border-blue-600 bg-white p-5 text-green-500 shadow-2xl shadow-blue-500">
+              Diferencia: {stock - prediccion}
+            </p>
+          )}
         </div>
       </div>
     </div>

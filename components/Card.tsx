@@ -1,9 +1,10 @@
 import React from "react";
 import Graph from "./graph";
+import Order from "./order";
 
 interface Card {
   contentType: string;
-  dataToRender: Array<any>;
+  dataToRender: any;
 }
 
 const Card: React.FC<Card> = (props) => {
@@ -15,12 +16,14 @@ const Card: React.FC<Card> = (props) => {
       contenToRender = <Graph data={dataToRender} />;
       break;
     case "order":
-      contenToRender;
+      contenToRender = (
+        <Order state={dataToRender.state} id={dataToRender.id} />
+      );
       break;
     case "carrier":
       contenToRender;
       break;
-    case "storage":
+    case "shelving":
       contenToRender;
 
     default:
