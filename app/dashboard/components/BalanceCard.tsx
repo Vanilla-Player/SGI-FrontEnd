@@ -22,7 +22,7 @@ export default function BalanceCard() {
           </span>
         </div>
 
-        <div className="ssm:flex-row ssm:self-auto z-10 flex h-full flex-col gap-7 self-start sm:justify-start">
+        <div className="z-10 flex h-full flex-col gap-7 self-start ssm:flex-row ssm:self-auto sm:justify-start">
           <div className="flex h-fit flex-col gap-3">
             <div className="flex flex-col pl-1">
               <span className="text-sm font-semibold tracking-[1.5px] text-white/80">

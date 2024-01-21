@@ -19,9 +19,9 @@ export default function DropDown({
     <Listbox value={selected} onChange={setSelected}>
       <div className="relative mt-1">
         <Listbox.Button className={`${style}`}>
-          {type === "crypto" && <img src={selected?.img} className="h-5 w-5" />}
+          {type == "crypto" && <img src={selected?.img} className="h-5 w-5" />}
           {selected?.name}
-          {type === "crypto" ? (
+          {type == "crypto" ? (
             <svg
               width="7"
               height="5"
@@ -72,7 +72,7 @@ export default function DropDown({
               >
                 {({ selected }) => (
                   <div className="flex gap-2 ">
-                    {type === "crypto" && (
+                    {type == "crypto" && (
                       <img src={item?.img} alt="crypto" className="h-5 w-5" />
                     )}
                     <span
@@ -80,7 +80,7 @@ export default function DropDown({
                         selected
                           ? "font-medium text-[#212B36]"
                           : "font-normal text-[#212B36]"
-                      } ${type === "crypto" ? "uppercase" : ""}`}
+                      } ${type === "crypto" && "uppercase"}`}
                     >
                       {item?.name}
                     </span>

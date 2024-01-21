@@ -1,5 +1,5 @@
 import DropDown from "@/components/Dropdown";
-import { PAY_METHODS, USER_LIST } from "@/utils/constants/userList";
+import { PAY_METHODS, PEOPLE, USER_LIST } from "@/utils/constants/userList";
 
 export default function TransactionModal() {
   return (

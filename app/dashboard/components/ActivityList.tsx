@@ -7,7 +7,7 @@ export default function ActivityList() {
         <span className="text-lg font-semibold text-[#212B36]">
           Ultimos ingresos
         </span>
-        <div className="xs:max-w-xl scrollbar-thin scrollbar-track-[#EDEDED] scrollbar-thumb-[#7851BD] mt-1 w-full max-w-xl overflow-x-scroll sm:max-w-xl md:max-w-7xl md:overflow-auto 2xl:max-w-none">
+        <div className="xs:max-w-xl mt-1 w-full max-w-xl overflow-x-scroll scrollbar-thin scrollbar-track-[#EDEDED] scrollbar-thumb-[#7851BD] sm:max-w-xl md:max-w-7xl md:overflow-auto 2xl:max-w-none">
           <table className="font-inter w-full table-auto border-separate border-spacing-y-1.5 overflow-scroll text-left md:overflow-auto">
             <thead className="w-full rounded-lg bg-[#222E3A]/[6%] text-base font-semibold text-white">
               <tr className="">

@@ -1,5 +1,4 @@
-import DynamicGraph from "./DynamicGrapgh";
-import Link from "next/link";
+import DynamicGraph from "./DynamicGraph";
 
 interface Graph {
   data: Array<any>;

@@ -11,11 +11,15 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@fontsource/poppins": "^5.0.8",
+    "@headlessui/react": "^1.7.17",
+    "@heroicons/react": "^2.1.1",
     "lightweight": "^0.1.0",
     "lightweight-charts": "^4.1.1",
     "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18",
+    "tailwind-scrollbar": "^3.0.5",
     "zod": "^3.22.4",
     "zod-validation-error": "^2.1.0"
   },

@@ -8,7 +8,7 @@ export const NAVIGATION = [
         width="20"
         height="21"
         viewBox="0 0 20 21"
-        fill="none"
+        fill="#233047"
         xmlns="http://www.w3.org/2000/svg"
         className="fill-[#233047] group-hover:fill-white"
       >
@@ -25,7 +25,7 @@ export const NAVIGATION = [
         width="20"
         height="19"
         viewBox="0 0 20 19"
-        fill="none"
+        fill="#233047"
         xmlns="http://www.w3.org/2000/svg"
         className="fill-[#233047] group-hover:fill-white"
       >
@@ -42,7 +42,7 @@ export const NAVIGATION = [
         width="19"
         height="17"
         viewBox="0 0 19 17"
-        fill="none"
+        fill="#233047"
         xmlns="http://www.w3.org/2000/svg"
         className="fill-[#233047] group-hover:fill-white"
       >
@@ -63,7 +63,7 @@ export const NAVIGATION = [
         width="19"
         height="19"
         viewBox="0 0 19 19"
-        fill="none"
+        fill="#233047"
         className="fill-[#233047] group-hover:fill-white"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -80,7 +80,7 @@ export const NAVIGATION = [
         width="20"
         height="21"
         viewBox="0 0 20 21"
-        fill="none"
+        fill="#233047"
         xmlns="http://www.w3.org/2000/svg"
         className="fill-[#233047] group-hover:fill-white"
       >
@@ -97,7 +97,7 @@ export const NAVIGATION = [
         width="20"
         height="21"
         viewBox="0 0 20 21"
-        fill="none"
+        fill="#233047"
         xmlns="http://www.w3.org/2000/svg"
         className="fill-[#233047] group-hover:fill-white"
       >
@@ -112,7 +112,7 @@ export const NAVIGATION = [
         width="19"
         height="23"
         viewBox="0 0 19 23"
-        fill="none"
+        fill="#233047"
         xmlns="http://www.w3.org/2000/svg"
         className="fill-[#233047] group-hover:fill-white"
       >
@@ -127,7 +127,7 @@ export const NAVIGATION = [
         width="20"
         height="21"
         viewBox="0 0 20 21"
-        fill="none"
+        fill="#233047"
         xmlns="http://www.w3.org/2000/svg"
         className="fill-[#233047] group-hover:fill-white"
       >
