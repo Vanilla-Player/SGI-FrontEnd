@@ -395,29 +395,29 @@ const TemplateReact = () => {
   };
   return (
     <div
-      className={`w-full min-h-[100vh] admin-analytics bg-[#F9F9F9] font-poppins sm:overflow-auto ${
-        show ? "overflow-hidden h-screen" : "overflow-auto"
+      className={`admin-analytics min-h-[100vh] w-full bg-[#F9F9F9] font-poppins sm:overflow-auto ${
+        show ? "h-screen overflow-hidden" : "overflow-auto"
       }`}
     >
-      <div className="w-full flex ">
+      <div className="flex w-full ">
         <div
           className={`
-   bg-white z-20 sm:min-h-[851px] lg:px-5 py-7 transition-all duration-1000 ease-in-out sm:ease-in-out sm:flex flex-col gap-16 absolute top-0 sm:relative sm:left-0 h-max overflow-hidden ${
+   absolute top-0 z-20 h-max flex-col gap-16 overflow-hidden bg-white py-7 transition-all duration-1000 ease-in-out sm:relative sm:left-0 sm:flex sm:min-h-[851px] sm:ease-in-out lg:px-5 ${
      show ? "left-0 h-screen w-72 overflow-y-auto" : "-left-72 sm:left-0"
    }
-  ${openSideBar ? "sm:w-72 px-5" : "sm:w-28 px-3.5"}
+  ${openSideBar ? "px-5 sm:w-72" : "px-3.5 sm:w-28"}
   `}
         >
           <div
-            className={`flex gap-2 items-center z-30 mb-5 sm:mb-0 relative ${
-              openSideBar ? "sm:justify-start pl-2" : "sm:justify-center pl-0"
+            className={`relative z-30 mb-5 flex items-center gap-2 sm:mb-0 ${
+              openSideBar ? "pl-2 sm:justify-start" : "pl-0 sm:justify-center"
             }`}
           >
             <div className="h-8 w-8 cursor-pointer">
               <Logo />
             </div>
             <span
-              className={`font-inter text-xl font-semibold text-[#233047] block ${
+              className={`font-inter block text-xl font-semibold text-[#233047] ${
                 openSideBar ? "block" : "sm:hidden "
               } cursor-pointer`}
             >
@@ -428,19 +428,19 @@ const TemplateReact = () => {
           <img
             src="/assets/admin/analytics-dashboard/close.svg"
             alt="logo"
-            className={`absolute top-7 h-7 w-7 left-52 cursor-pointer sm:hidden ${
-              show ? "block z-30" : "hidden"
+            className={`absolute left-52 top-7 h-7 w-7 cursor-pointer sm:hidden ${
+              show ? "z-30 block" : "hidden"
             }`}
             onClick={openSidebar}
           />
           <div
-            className={`h-10 z-20 w-10 rounded-full bg-white absolute top-[26px] -right-3.5 sm:flex justify-center items-center cursor-pointer hidden ${
+            className={`absolute -right-3.5 top-[26px] z-20 hidden h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-white sm:flex ${
               openSideBar ? "rotate-[180deg]" : "rotate-0"
             }`}
             onClick={expandSidebar}
           >
             <svg
-              className="w-8 h-8 rotate-[180deg]"
+              className="h-8 w-8 rotate-[180deg]"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"
@@ -461,7 +461,7 @@ const TemplateReact = () => {
             <div className="flex flex-col gap-2">
               {navigation?.map((data, index) => (
                 <button
-                  className={`rounded-[10px] py-5 px-3.5 flex gap-3 text-lg font-medium hover:bg-gradient-to-tl hover:to-[#7851BD] hover:from-[#4E4BCF] hover:text-white text-[#233047] items-center tracking-[1.5px] truncate group justify-start ${
+                  className={`group flex items-center justify-start gap-3 truncate rounded-[10px] px-3.5 py-5 text-lg font-medium tracking-[1.5px] text-[#233047] hover:bg-gradient-to-tl hover:from-[#4E4BCF] hover:to-[#7851BD] hover:text-white ${
                     openSideBar ? "sm:justify-start" : "sm:justify-center"
                   } `}
                   key={index}
@@ -477,14 +477,14 @@ const TemplateReact = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col w-full">
-          <div className="flex py-5 px-4 sm:px-7 w-full items-center justify-between sm:justify-end bg-white sm:gap-11">
+        <div className="flex w-full flex-col">
+          <div className="flex w-full items-center justify-between bg-white px-4 py-5 sm:justify-end sm:gap-11 sm:px-7">
             <div
-              className="cursor-pointer sm:hidden border border-[#E7E7E7] hover:border-blue-600 group rounded-md flex justify-center items-center"
+              className="group flex cursor-pointer items-center justify-center rounded-md border border-[#E7E7E7] hover:border-blue-600 sm:hidden"
               onClick={openSidebar}
             >
               <svg
-                className="group-hover:text-blue-600 text-[#637381] w-10 h-10"
+                className="h-10 w-10 text-[#637381] group-hover:text-blue-600"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
@@ -500,13 +500,13 @@ const TemplateReact = () => {
                 />
               </svg>
             </div>
-            <div className="flex sm:hidden gap-2 items-center">
+            <div className="flex items-center gap-2 sm:hidden">
               <Logo />
-              <span className="font-inter text-xl font-semibold text-[#233047] cursor-pointer">
+              <span className="font-inter cursor-pointer text-xl font-semibold text-[#233047]">
                 infyToken
               </span>
             </div>
-            <div className="py-3 px-5 rounded-[30px] bg-[#EDEDED] w-2/4 max-w-sm items-center gap-2 hidden sm:flex group focus-within:border-[#7851BD] border-[2px] border-transparent">
+            <div className="group hidden w-2/4 max-w-sm items-center gap-2 rounded-[30px] border-[2px] border-transparent bg-[#EDEDED] px-5 py-3 focus-within:border-[#7851BD] sm:flex">
               <img
                 src="/assets/admin/analytics-dashboard/search.svg"
                 alt="search"
@@ -515,11 +515,11 @@ const TemplateReact = () => {
 
               <input
                 type="text"
-                className="outline-none bg-transparent w-4/5 group"
+                className="group w-4/5 bg-transparent outline-none"
                 placeholder="Search..."
               />
             </div>
-            <div className="flex gap-1.5 items-center">
+            <div className="flex items-center gap-1.5">
               <svg
                 width="24"
                 height="24"
@@ -551,7 +551,7 @@ const TemplateReact = () => {
                 viewBox="0 0 22 26"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className="mr-1.5 cursor-pointer fill-[#758A8F] hover:fill-[#7851BD] group"
+                className="group mr-1.5 cursor-pointer fill-[#758A8F] hover:fill-[#7851BD]"
               >
                 <g clipPath="url(#clip0_588_54443)">
                   <path
@@ -583,7 +583,7 @@ const TemplateReact = () => {
                 viewBox="0 0 19 18"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className="hidden sm:block cursor-pointer fill-[#758A8F] hover:fill-[#7851BD]"
+                className="hidden cursor-pointer fill-[#758A8F] hover:fill-[#7851BD] sm:block"
               >
                 <path
                   fillRule="evenodd"
@@ -609,27 +609,27 @@ const TemplateReact = () => {
             </div>
           </div>
           <div
-            className={`py-7 px-7 flex w-full gap-7 transition-all duration-1000 ease-in-out ${
+            className={`flex w-full gap-7 px-7 py-7 transition-all duration-1000 ease-in-out ${
               openSideBar
                 ? "sm:max-w-[calc(100vw_-_229px)] lg:max-w-[calc(100vw_-_286px)] "
                 : "sm:max-w-[calc(100vw_-_99px)] lg:max-w-[calc(100vw_-_110px)] xl:max-w-[calc(100vw_-_138px)]"
             }`}
           >
             <div
-              className={`flex flex-col w-full gap-7 ${
+              className={`flex w-full flex-col gap-7 ${
                 openSideBar
                   ? "w-full lg:max-w-[calc(100%_-_320px)]"
                   : "md:max-w-[calc(100%_-_255px)] lg:max-w-[calc(100%_-_420px)]"
               } xl:max-w-[calc(100%_-_390px)]`}
             >
-              <div className="bg-gradient-to-tl to-[#7851BD] from-[#4E4BCF] rounded-xl p-5 relative overflow-hidden">
+              <div className="relative overflow-hidden rounded-xl bg-gradient-to-tl from-[#4E4BCF] to-[#7851BD] p-5">
                 <svg
                   width="581"
                   height="239"
                   viewBox="0 0 581 239"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className="absolute -top-14 -right-[27rem] sm:-right-64 lg:-top-28"
+                  className="absolute -right-[27rem] -top-14 sm:-right-64 lg:-top-28"
                 >
                   <path
                     d="M527.607 1.7273C580.879 -33.0372 543.535 -81.6071 518.204 -101.546C439.881 -162.473 430.701 -91.4797 317.582 -143.722C204.463 -195.965 227.141 -159.2 83.8863 17.2559C-59.3679 193.712 128.456 191.653 151.46 157.066C174.465 122.48 215.973 138.631 267.533 191.898C319.093 245.165 448.712 151.23 426.229 94.617C403.746 38.0046 461.017 45.183 527.607 1.7273Z"
@@ -663,13 +663,13 @@ const TemplateReact = () => {
                   />
                 </svg>
 
-                <div className="flex gap-4 sm:flex-wrap ssm:gap-12 xl:gap-6 flex-col xl:flex-row xl:justify-between xl:items-end lg:h-fit">
+                <div className="flex flex-col gap-4 ssm:gap-12 sm:flex-wrap lg:h-fit xl:flex-row xl:items-end xl:justify-between xl:gap-6">
                   <div className="flex flex-col gap-3">
                     <span className="text-lg font-semibold text-[#FDFDFF]">
                       Your Balance
                     </span>
-                    <div className="flex gap-1 items-center">
-                      <span className="font-medium text-sm text-white/80">
+                    <div className="flex items-center gap-1">
+                      <span className="text-sm font-medium text-white/80">
                         jkjnkjojfowvpoweut6187189784
                       </span>
                       <svg
@@ -694,35 +694,35 @@ const TemplateReact = () => {
                     <span className="text-[22px] font-bold text-[#FDFDFF]">
                       $31,300.40
                     </span>
-                    <span className="text-sm font-medium text-[#FDFDFF] tracking-[1.4px]">
+                    <span className="text-sm font-medium tracking-[1.4px] text-[#FDFDFF]">
                       28.6165489 BTC
                     </span>
                   </div>
 
-                  <div className="flex gap-7 flex-col ssm:flex-row h-full sm:justify-start self-start ssm:self-auto z-10">
-                    <div className="flex flex-col gap-3 h-fit">
+                  <div className="z-10 flex h-full flex-col gap-7 self-start ssm:flex-row ssm:self-auto sm:justify-start">
+                    <div className="flex h-fit flex-col gap-3">
                       <div className="flex flex-col pl-1">
-                        <span className="text-sm font-semibold text-white/80 tracking-[1.5px]">
+                        <span className="text-sm font-semibold tracking-[1.5px] text-white/80">
                           Income
                         </span>
                         <span className="text-lg font-semibold text-[#FDFDFF]">
                           $459.20
                         </span>
                       </div>
-                      <button className="py-2.5 rounded-[10px] font-semibold text-white text-center bg-[#f9f9f94d] min-w-[150px] text-lg hover:scale-105">
+                      <button className="min-w-[150px] rounded-[10px] bg-[#f9f9f94d] py-2.5 text-center text-lg font-semibold text-white hover:scale-105">
                         Receive
                       </button>
                     </div>
-                    <div className="flex flex-col gap-3 h-fit">
+                    <div className="flex h-fit flex-col gap-3">
                       <div className="flex flex-col">
-                        <span className="text-sm font-semibold text-white/80 tracking-[1.5px]">
+                        <span className="text-sm font-semibold tracking-[1.5px] text-white/80">
                           Income
                         </span>
                         <span className="text-lg font-semibold text-[#FDFDFF]">
                           $250.40
                         </span>
                       </div>
-                      <button className="py-2.5 rounded-[10px] font-semibold text-white text-center bg-[#f9f9f94d] min-w-[150px] text-lg hover:scale-105">
+                      <button className="min-w-[150px] rounded-[10px] bg-[#f9f9f94d] py-2.5 text-center text-lg font-semibold text-white hover:scale-105">
                         Send
                       </button>
                     </div>
@@ -734,19 +734,19 @@ const TemplateReact = () => {
               >
                 <CryptoCoin />
               </div>
-              <div className="bg-[#FDFDFF] rounded-md ">
-                <div className="p-5 flex flex-col overflow-hidden overflow-x-auto gap-5 scrollbar-thin !scrollbar-thumb-[#7851BD] scrollbar-track-[#EDEDED] rounded-xl">
-                  <span className="text-[#212B36] text-lg font-semibold">
+              <div className="rounded-md bg-[#FDFDFF] ">
+                <div className="flex flex-col gap-5 overflow-hidden overflow-x-auto rounded-xl p-5 scrollbar-thin scrollbar-track-[#EDEDED] !scrollbar-thumb-[#7851BD]">
+                  <span className="text-lg font-semibold text-[#212B36]">
                     Watch list
                   </span>
-                  <div className="flex flex-col sm:flex-row gap-5">
+                  <div className="flex flex-col gap-5 sm:flex-row">
                     {watchList?.map((data, index) => (
                       <div
-                        className="flex flex-col gap-5 border border-[#7851bd33] p-5 rounded-xl w-full sm:max-w-xs"
+                        className="flex w-full flex-col gap-5 rounded-xl border border-[#7851bd33] p-5 sm:max-w-xs"
                         key={index}
                       >
-                        <div className="flex justify-between w-full sm:min-w-[200px] items-center">
-                          <span className="text-sm font-medium text-[#212B36] !capitalize">
+                        <div className="flex w-full items-center justify-between sm:min-w-[200px]">
+                          <span className="text-sm font-medium !capitalize text-[#212B36]">
                             {data?.name}
                           </span>
 
@@ -760,10 +760,10 @@ const TemplateReact = () => {
                           <img
                             src={data?.graph}
                             alt="graph"
-                            className="object-fill w-full"
+                            className="w-full object-fill"
                           />
                         </div>
-                        <div className="flex justify-between flex-wrap sm:flex-nowrap">
+                        <div className="flex flex-wrap justify-between sm:flex-nowrap">
                           <div className="flex gap-2.5">
                             <img
                               src={data?.coinImage}
@@ -801,7 +801,7 @@ const TemplateReact = () => {
                   </div>
                 </div>
               </div>
-              <div className="bg-[#FDFDFF] rounded-2xl block md:hidden">
+              <div className="block rounded-2xl bg-[#FDFDFF] md:hidden">
                 <Chat />
               </div>
               <div className="overflow-hidden">
@@ -809,20 +809,20 @@ const TemplateReact = () => {
                   <span className="text-lg font-semibold text-[#212B36]">
                     Activity
                   </span>
-                  <div className="w-full overflow-x-scroll scrollbar-thumb-[#7851BD] scrollbar-track-[#EDEDED] scrollbar-thin md:overflow-auto max-w-xl xs:max-w-xl sm:max-w-xl md:max-w-7xl 2xl:max-w-none mt-1">
-                    <table className="table-auto overflow-scroll md:overflow-auto w-full text-left font-inter border-separate border-spacing-y-1.5">
-                      <thead className="bg-[#222E3A]/[6%] rounded-lg text-base text-white font-semibold w-full">
+                  <div className="xs:max-w-xl mt-1 w-full max-w-xl overflow-x-scroll scrollbar-thin scrollbar-track-[#EDEDED] scrollbar-thumb-[#7851BD] sm:max-w-xl md:max-w-7xl md:overflow-auto 2xl:max-w-none">
+                    <table className="font-inter w-full table-auto border-separate border-spacing-y-1.5 overflow-scroll text-left md:overflow-auto">
+                      <thead className="w-full rounded-lg bg-[#222E3A]/[6%] text-base font-semibold text-white">
                         <tr className="">
-                          <th className="py-3 pl-3 text-[#212B36] text-base sm:text-sm font-normal whitespace-nowrap rounded-l-lg">
+                          <th className="whitespace-nowrap rounded-l-lg py-3 pl-3 text-base font-normal text-[#212B36] sm:text-sm">
                             Activity
                           </th>
-                          <th className="py-3 pl-2 text-[#212B36] text-base sm:text-sm font-normal whitespace-nowrap">
+                          <th className="whitespace-nowrap py-3 pl-2 text-base font-normal text-[#212B36] sm:text-sm">
                             Account
                           </th>
-                          <th className="py-3 pl-2 text-[#212B36] text-base sm:text-sm font-normal whitespace-nowrap">
+                          <th className="whitespace-nowrap py-3 pl-2 text-base font-normal text-[#212B36] sm:text-sm">
                             Last Payment
                           </th>
-                          <th className="py-3 pl-2 text-[#212B36] text-base sm:text-sm font-normal whitespace-nowrap  rounded-r-lg">
+                          <th className="whitespace-nowrap rounded-r-lg py-3 pl-2 text-base font-normal text-[#212B36]  sm:text-sm">
                             Balance
                           </th>
                         </tr>
@@ -831,35 +831,35 @@ const TemplateReact = () => {
                         {TableData.map((data, index) => (
                           <tr
                             key={index}
-                            className="drop-shadow-[0_0_10px_rgba(34,46,58,0.02)] hover:drop-shadow-2xl cursor-pointer bg-[#f6f8fa]"
+                            className="cursor-pointer bg-[#f6f8fa] drop-shadow-[0_0_10px_rgba(34,46,58,0.02)] hover:drop-shadow-2xl"
                           >
-                            <td className="py-5 pl-3 text-sm font-normal text-[#637381] rounded-l-lg border-y border-l border-[#7851BD]/20">
-                              <div className="relative flex gap-3 items-center">
+                            <td className="rounded-l-lg border-y border-l border-[#7851BD]/20 py-5 pl-3 text-sm font-normal text-[#637381]">
+                              <div className="relative flex items-center gap-3">
                                 <div className="">
                                   <img
                                     src={data?.image}
                                     alt="hepta-brown"
-                                    className="min-w-[42px] min-h-[42px]"
+                                    className="min-h-[42px] min-w-[42px]"
                                   />
                                 </div>
                                 <div className="flex flex-col whitespace-nowrap">
-                                  <span className="text-xs md:text-sm text-[#212B36]">
+                                  <span className="text-xs text-[#212B36] md:text-sm">
                                     {data?.title}
                                   </span>
-                                  <span className="text-xs md:text-sm text-[#637381] mt-1">
+                                  <span className="mt-1 text-xs text-[#637381] md:text-sm">
                                     {data?.description}
                                   </span>
                                 </div>
                               </div>
                             </td>
-                            <td className="py-5 px-2 text-xs md:text-sm font-normal text-[#637381]  border-y  border-x-0 border-[#7851BD]/20">
+                            <td className="border-x-0 border-y border-[#7851BD]/20 px-2 py-5 text-xs  font-normal  text-[#637381] md:text-sm">
                               {data.account}
                             </td>
-                            <td className="py-5 px-2 text-xs md:text-sm font-normal text-[#637381]  border-y border-x-0 border-[#7851BD]/20">
+                            <td className="border-x-0 border-y border-[#7851BD]/20 px-2 py-5 text-xs  font-normal text-[#637381] md:text-sm">
                               {data.payment}
                             </td>
                             <td
-                              className={`py-5 px-2 text-xs md:text-sm font-normal text-[#637381] rounded-r-lg  border-y border-r border-[#7851BD]/20`}
+                              className={`rounded-r-lg border-y border-r border-[#7851BD]/20 px-2 py-5 text-xs  font-normal text-[#637381] md:text-sm`}
                             >
                               {data.balance}
                             </td>
@@ -870,12 +870,12 @@ const TemplateReact = () => {
                   </div>
                 </div>
               </div>
-              <div className="bg-white rounded-2xl block md:hidden">
+              <div className="block rounded-2xl bg-white md:hidden">
                 <Chart />
               </div>
             </div>
             <div
-              className={`flex-col gap-7 w-full max-w-[230px] ${
+              className={`w-full max-w-[230px] flex-col gap-7 ${
                 openSideBar ? " lg:max-w-[336px]" : "lg:max-w-[400px]"
               } xl:max-w-[390px] ${
                 openSideBar ? "hidden lg:flex" : "hidden sm:flex"
@@ -885,11 +885,11 @@ const TemplateReact = () => {
                 <CryptoCoin />
               </div>
 
-              <div className="bg-[#FDFDFF] rounded-2xl">
+              <div className="rounded-2xl bg-[#FDFDFF]">
                 <Chat />
               </div>
 
-              <div className="bg-white rounded-2xl">
+              <div className="rounded-2xl bg-white">
                 <Chart />
               </div>
             </div>
@@ -904,26 +904,26 @@ export default TemplateReact;
 
 export const CryptoCoin = () => {
   return (
-    <div className="flex flex-col gap-3.5 w-ful justify-between h-full">
-      <div className="flex justify-between items-center">
+    <div className="w-ful flex h-full flex-col justify-between gap-3.5">
+      <div className="flex items-center justify-between">
         <span className="text-lg font-semibold text-[#212B36]">Assets</span>
-        <span className="text-sm font-medium text-[#637381] cursor-pointer hover:text-[#7851BD] mr-2">
+        <span className="mr-2 cursor-pointer text-sm font-medium text-[#637381] hover:text-[#7851BD]">
           View All
         </span>
       </div>
-      <div className="overflow-hidden overflow-x-auto flex gap-5 pb-2 scrollbar-thumb-[#7851BD] scrollbar-track-[#EDEDED] scrollbar-thin">
+      <div className="flex gap-5 overflow-hidden overflow-x-auto pb-2 scrollbar-thin scrollbar-track-[#EDEDED] scrollbar-thumb-[#7851BD]">
         {crypto?.map?.((data, index) => (
           <div
-            className="py-5 px-3.5 flex gap-3.5 flex-col min-w-[183px] rounded-lg bg-white border border-[#7851bd33]"
+            className="flex min-w-[183px] flex-col gap-3.5 rounded-lg border border-[#7851bd33] bg-white px-3.5 py-5"
             key={index}
           >
-            <div className="flex gap-2.5 items-center">
+            <div className="flex items-center gap-2.5">
               <img src={data?.img} />
-              <span className="text-lg font-medium tracking-[1.8px] text-[#637381] uppercase">
+              <span className="text-lg font-medium uppercase tracking-[1.8px] text-[#637381]">
                 {data?.name}
               </span>
             </div>
-            <span className="text-lg font-semibold text-[#212B36] tracking-[1.8px]">
+            <span className="text-lg font-semibold tracking-[1.8px] text-[#212B36]">
               $224,300.40
             </span>
             <span
@@ -942,37 +942,37 @@ export const CryptoCoin = () => {
 
 export const Chat = () => {
   return (
-    <div className="py-6 flex flex-col gap-5 ">
+    <div className="flex flex-col gap-5 py-6 ">
       <div className="flex flex-col gap-3 px-5">
-        <div className="flex justify-between md:flex-col gap-3 lg:flex-row lg:justify-between">
-          <span className="text-lg font-semibold text-[#212B36] whitespace-nowrap">
+        <div className="flex justify-between gap-3 md:flex-col lg:flex-row lg:justify-between">
+          <span className="whitespace-nowrap text-lg font-semibold text-[#212B36]">
             Send Money
           </span>
-          <button className="px-5 py-1.5 text-[#637381] hover:bg-gradient-to-tl hover:to-[#7851BD] hover:from-[#4E4BCF] text-base tracking-[1.6px] bg-[#EDEDED] rounded-[40px] text-center h-fit w-fi hover:text-white whitespace-nowrap self-end">
+          <button className="w-fi h-fit self-end whitespace-nowrap rounded-[40px] bg-[#EDEDED] px-5 py-1.5 text-center text-base tracking-[1.6px] text-[#637381] hover:bg-gradient-to-tl hover:from-[#4E4BCF] hover:to-[#7851BD] hover:text-white">
             View All
           </button>
         </div>
-        <div className="flex justify-between flex-wrap gap-2 lg:gap-0 lg:flex-nowrap ">
-          <div className="flex gap-7 flex-wrap">
+        <div className="flex flex-wrap justify-between gap-2 lg:flex-nowrap lg:gap-0 ">
+          <div className="flex flex-wrap gap-7">
             {userList?.map((data, index) => (
               <img src={data} alt="user" key={index} className="h-9 w-9" />
             ))}
           </div>
         </div>
       </div>
-      <div className="border-t border-[#7851bd33] px-5 pt-5 flex gap-7 flex-col">
-        <div className="flex flex-col gap-2 xl:flex-row xl:justify-between w-full">
-          <span className="font-semibold text-lg text-[#212B36] tracking-[1px]">
+      <div className="flex flex-col gap-7 border-t border-[#7851bd33] px-5 pt-5">
+        <div className="flex w-full flex-col gap-2 xl:flex-row xl:justify-between">
+          <span className="text-lg font-semibold tracking-[1px] text-[#212B36]">
             Operations
           </span>
-          <div className="p-2 bg-[#EDEDED] rounded-lg flex flex-wrap">
-            <span className="bg-[#EDEDED] hover:bg-white text-sm px-2.5 py-1.5 rounded-md tracking-[1.5px] cursor-pointer hover:shadow-[0_2px_10px_0_rgba(0,0,0,0.1)]">
+          <div className="flex flex-wrap rounded-lg bg-[#EDEDED] p-2">
+            <span className="cursor-pointer rounded-md bg-[#EDEDED] px-2.5 py-1.5 text-sm tracking-[1.5px] hover:bg-white hover:shadow-[0_2px_10px_0_rgba(0,0,0,0.1)]">
               Buy
             </span>
-            <span className="bg-[#EDEDED] hover:bg-white text-sm px-2.5 py-1.5 rounded-md tracking-[1.5px] cursor-pointer hover:shadow-[0_2px_10px_0_rgba(0,0,0,0.1)]">
+            <span className="cursor-pointer rounded-md bg-[#EDEDED] px-2.5 py-1.5 text-sm tracking-[1.5px] hover:bg-white hover:shadow-[0_2px_10px_0_rgba(0,0,0,0.1)]">
               Sell
             </span>
-            <span className="bg-[#EDEDED] hover:bg-white text-sm px-2.5 py-1.5 rounded-md cursor-pointer tracking-[1.5px] hover:shadow-[0_2px_10px_0_rgba(0,0,0,0.1)]">
+            <span className="cursor-pointer rounded-md bg-[#EDEDED] px-2.5 py-1.5 text-sm tracking-[1.5px] hover:bg-white hover:shadow-[0_2px_10px_0_rgba(0,0,0,0.1)]">
               Exchange
             </span>
           </div>
@@ -980,18 +980,18 @@ export const Chat = () => {
         <div className="">
           <div className="">
             <span className="text-sm text-[#637381]">You pay</span>
-            <div className="py-2 pl-1.5 bg-[#EDEDED] flex justify-between flex-wrap gap-3 rounded-lg">
+            <div className="flex flex-wrap justify-between gap-3 rounded-lg bg-[#EDEDED] py-2 pl-1.5">
               <DropDowns
                 list={people}
                 selectedIcon={people[1]}
                 type="crypto"
                 style="flex p-1.5 bg-[#FDFDFF] gap-2 items-center w-fit rounded-lg tracking-[1.4px] uppercase w-[95px]"
               />
-              <div className="flex gap-4 items-center mr-4 ml-1.5">
-                <span className="text-[#212B36] font-semibold text-sm tracking-[1.5px]">
+              <div className="ml-1.5 mr-4 flex items-center gap-4">
+                <span className="text-sm font-semibold tracking-[1.5px] text-[#212B36]">
                   $321.40
                 </span>
-                <button className="px-2 py-0.5 text-xs uppercase bg-[#7851BD] rounded-[20px] text-[#FDFDFF] font-bold tracking-[1px]">
+                <button className="rounded-[20px] bg-[#7851BD] px-2 py-0.5 text-xs font-bold uppercase tracking-[1px] text-[#FDFDFF]">
                   Max
                 </button>
               </div>
@@ -1014,7 +1014,7 @@ export const Chat = () => {
           </div>
           <div className="mt-0.5">
             <span className="text-sm text-[#637381]">You get</span>
-            <div className="py-2 pl-1.5 bg-[#EDEDED] flex justify-between flex-wrap gap-3 rounded-lg">
+            <div className="flex flex-wrap justify-between gap-3 rounded-lg bg-[#EDEDED] py-2 pl-1.5">
               <DropDowns
                 list={people}
                 type="crypto"
@@ -1023,18 +1023,18 @@ export const Chat = () => {
                   "flex p-1.5 bg-[#FDFDFF] gap-2 items-center w-fit rounded-lg tracking-[1.4px] uppercase w-[95px]"
                 }
               />
-              <div className="flex gap-4 items-center mr-4 ml-1.5">
-                <span className="text-[#212B36] font-semibold text-sm tracking-[1.5px]">
+              <div className="ml-1.5 mr-4 flex items-center gap-4">
+                <span className="text-sm font-semibold tracking-[1.5px] text-[#212B36]">
                   0.05BTC
                 </span>
-                <button className="px-2 py-0.5 text-xs uppercase bg-[#7851BD] rounded-[20px] text-[#FDFDFF] font-bold tracking-[1px]">
+                <button className="rounded-[20px] bg-[#7851BD] px-2 py-0.5 text-xs font-bold uppercase tracking-[1px] text-[#FDFDFF]">
                   min
                 </button>
               </div>
             </div>
           </div>
         </div>
-        <button className="px-5 py-5 bg-gradient-to-tl to-[#7851BD] from-[#4E4BCF] rounded-xl text-lg font-semibold mt-3 text-white hover:scale-105">
+        <button className="mt-3 rounded-xl bg-gradient-to-tl from-[#4E4BCF] to-[#7851BD] px-5 py-5 text-lg font-semibold text-white hover:scale-105">
           Buy Bitcoin
         </button>
       </div>
@@ -1089,12 +1089,12 @@ const DropDowns = ({ list, selectedIcon, style, type }) => {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <Listbox.Options className="absolute mt-1 z-50 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm min-w-[76px]">
+          <Listbox.Options className="absolute z-50 mt-1 max-h-60 w-full min-w-[76px] overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
             {list?.map((person, personId) => (
               <Listbox.Option
                 key={personId}
                 className={({ active }) =>
-                  `relative select-none py-2 pl-2 pr-4 cursor-pointer ${
+                  `relative cursor-pointer select-none py-2 pl-2 pr-4 ${
                     active ? "bg-[#F6F8FA] text-gray-900" : "text-gray-900"
                   }`
                 }
@@ -1126,13 +1126,13 @@ const DropDowns = ({ list, selectedIcon, style, type }) => {
 };
 export const Chart = () => {
   return (
-    <div className="py-5 pl-5 pr-10 flex flex-col gap-5 overflow-hidden overflow-x-auto scrollbar-thumb-[#7851BD] scrollbar-track-[#EDEDED] scrollbar-thin">
+    <div className="flex flex-col gap-5 overflow-hidden overflow-x-auto py-5 pl-5 pr-10 scrollbar-thin scrollbar-track-[#EDEDED] scrollbar-thumb-[#7851BD]">
       <div className="flex gap-60">
         <div className="flex flex-col gap-2.5 ">
-          <span className="text-lg text-[#212B36 font-semibold">
+          <span className="text-[#212B36 text-lg font-semibold">
             Transactions
           </span>
-          <span className="text-[#637381] text-xs font-medium whitespace-nowrap">
+          <span className="whitespace-nowrap text-xs font-medium text-[#637381]">
             Lorem ipsum dolor sit amet, consectetur
           </span>
         </div>
@@ -1145,14 +1145,14 @@ export const Chart = () => {
           />
         </div>
       </div>
-      <div className="flex gap-[21rem] justify-between pr-5">
-        <span className="text-sm font-medium text-[#212B36] whitespace-nowrap">
+      <div className="flex justify-between gap-[21rem] pr-5">
+        <span className="whitespace-nowrap text-sm font-medium text-[#212B36]">
           Last Month
           <span className="text-sm font-medium text-[#32A953]"> $42,443</span>
         </span>
-        <div className="text-[#000000] font-semibold text-xl gap-2.5 flex items-start pl-1">
+        <div className="flex items-start gap-2.5 pl-1 text-xl font-semibold text-[#000000]">
           <span> $48,525.21</span>
-          <span className="text-[#32A953] flex">
+          <span className="flex text-[#32A953]">
             7%
             <svg
               width="26"
@@ -1188,7 +1188,7 @@ const Logo = () => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
-      className="cursor-pointer h-8 w-8"
+      className="h-8 w-8 cursor-pointer"
     >
       <mask
         id="mask0_566_52282"
