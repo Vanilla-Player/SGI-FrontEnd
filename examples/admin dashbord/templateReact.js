@@ -787,7 +787,7 @@ const TemplateReact = () => {
                             />
                             <span
                               className={`font-inter text-xs font-medium ${
-                                data?.color == "green"
+                                data?.color === "green"
                                   ? "text-[#45CB85]"
                                   : "text-[#DC3545]"
                               }`}
@@ -928,7 +928,7 @@ export const CryptoCoin = () => {
             </span>
             <span
               className={`text-sm font-medium ${
-                data?.color == "red" ? "text-[#DA1818]" : "text-[#32A953]"
+                data?.color === "red" ? "text-[#DA1818]" : "text-[#32A953]"
               } `}
             >
               7.2526
@@ -1049,9 +1049,9 @@ const DropDowns = ({ list, selectedIcon, style, type }) => {
     <Listbox value={selected} onChange={setSelected}>
       <div className="relative mt-1">
         <Listbox.Button className={`${style}`}>
-          {type == "crypto" && <img src={selected?.img} className="h-5 w-5" />}
+          {type === "crypto" && <img src={selected?.img} className="h-5 w-5" />}
           {selected?.name}
-          {type == "crypto" ? (
+          {type === "crypto" ? (
             <svg
               width="7"
               height="5"
@@ -1102,7 +1102,7 @@ const DropDowns = ({ list, selectedIcon, style, type }) => {
               >
                 {({ selected }) => (
                   <div className="flex gap-2 ">
-                    {type == "crypto" && (
+                    {type === "crypto" && (
                       <img src={person?.img} alt="crypto" className="h-5 w-5" />
                     )}
                     <span
@@ -1110,7 +1110,7 @@ const DropDowns = ({ list, selectedIcon, style, type }) => {
                         selected
                           ? "font-medium text-[#212B36]"
                           : "font-normal text-[#212B36]"
-                      } ${type == "crypto" && "uppercase"}`}
+                      } ${type === "crypto" && "uppercase"}`}
                     >
                       {person?.name}
                     </span>

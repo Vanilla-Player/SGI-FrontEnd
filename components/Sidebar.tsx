@@ -61,11 +61,12 @@ export default function Sidebar({
       <div className="flex flex-col gap-4 sm:gap-40">
         <div className="flex flex-col gap-2">
           {NAVIGATION?.map((data, index) => (
-            <button
+            <a
               className={`group flex items-center justify-start gap-3 truncate rounded-[10px] px-3.5 py-5 text-lg font-medium tracking-[1.5px] text-[#233047] hover:bg-gradient-to-tl hover:from-[#4E4BCF] hover:to-[#7851BD] hover:text-white ${
                 openSideBar ? "sm:justify-start" : "sm:justify-center"
               } `}
               key={index}
+              href={data?.alt}
             >
               <div className="h-5 w-5">{data?.svg}</div>
               <span
@@ -73,7 +74,7 @@ export default function Sidebar({
               >
                 {data?.name}
               </span>
-            </button>
+            </a>
           ))}
         </div>
       </div>

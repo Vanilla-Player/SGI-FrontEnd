@@ -1,5 +1,5 @@
-import DropDown from "@/components/Dropdown";
-import { PAY_METHODS, PEOPLE, USER_LIST } from "@/utils/constants/userList";
+import Dropdown from "@/components/Dropdown";
+import { PAY_METHODS, USER_LIST } from "@/utils/constants/userList";
 
 export default function TransactionModal() {
   return (
@@ -7,10 +7,10 @@ export default function TransactionModal() {
       <div className="flex flex-col gap-3 px-5">
         <div className="flex justify-between gap-3 md:flex-col lg:flex-row lg:justify-between">
           <span className="whitespace-nowrap text-lg font-semibold text-[#212B36]">
-            Send Money
+            Enviar dinero
           </span>
           <button className="w-fi h-fit self-end whitespace-nowrap rounded-[40px] bg-[#EDEDED] px-5 py-1.5 text-center text-base tracking-[1.6px] text-[#637381] hover:bg-gradient-to-tl hover:from-[#4E4BCF] hover:to-[#7851BD] hover:text-white">
-            View All
+            Ver mas
           </button>
         </div>
         <div className="flex flex-wrap justify-between gap-2 lg:flex-nowrap lg:gap-0 ">
@@ -29,17 +29,14 @@ export default function TransactionModal() {
       <div className="flex flex-col gap-7 border-t border-[#7851bd33] px-5 pt-5">
         <div className="flex w-full flex-col gap-2 xl:flex-row xl:justify-between">
           <span className="text-lg font-semibold tracking-[1px] text-[#212B36]">
-            Operations
+            Operaciones
           </span>
           <div className="flex flex-wrap rounded-lg bg-[#EDEDED] p-2">
             <span className="cursor-pointer rounded-md bg-[#EDEDED] px-2.5 py-1.5 text-sm tracking-[1.5px] hover:bg-white hover:shadow-[0_2px_10px_0_rgba(0,0,0,0.1)]">
-              Buy
+              Comprar
             </span>
             <span className="cursor-pointer rounded-md bg-[#EDEDED] px-2.5 py-1.5 text-sm tracking-[1.5px] hover:bg-white hover:shadow-[0_2px_10px_0_rgba(0,0,0,0.1)]">
-              Sell
-            </span>
-            <span className="cursor-pointer rounded-md bg-[#EDEDED] px-2.5 py-1.5 text-sm tracking-[1.5px] hover:bg-white hover:shadow-[0_2px_10px_0_rgba(0,0,0,0.1)]">
-              Exchange
+              Vender
             </span>
           </div>
         </div>
@@ -47,7 +44,7 @@ export default function TransactionModal() {
           <div className="">
             <span className="text-sm text-[#637381]">You pay</span>
             <div className="flex flex-wrap justify-between gap-3 rounded-lg bg-[#EDEDED] py-2 pl-1.5">
-              <DropDown
+              <Dropdown
                 list={PAY_METHODS}
                 selectedIcon={PAY_METHODS[1]}
                 type="crypto"
@@ -81,7 +78,7 @@ export default function TransactionModal() {
           <div className="mt-0.5">
             <span className="text-sm text-[#637381]">You get</span>
             <div className="flex flex-wrap justify-between gap-3 rounded-lg bg-[#EDEDED] py-2 pl-1.5">
-              <DropDown
+              <Dropdown
                 list={PAY_METHODS}
                 type="crypto"
                 selectedIcon={PAY_METHODS[0]}
@@ -101,7 +98,7 @@ export default function TransactionModal() {
           </div>
         </div>
         <button className="mt-3 rounded-xl bg-gradient-to-tl from-[#4E4BCF] to-[#7851BD] px-5 py-5 text-lg font-semibold text-white hover:scale-105">
-          Buy money
+          Comprar activos
         </button>
       </div>
     </div>
