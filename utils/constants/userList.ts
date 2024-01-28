@@ -1,3 +1,4 @@
+// Mock data
 export const USER_LIST = [
   "https://picsum.photos/200/300",
   "https://picsum.photos/201/300",
