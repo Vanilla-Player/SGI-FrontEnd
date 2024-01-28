@@ -7,6 +7,7 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
+import CarrierReviewForm from "./CarrierReviewForm";
 
 export default function CarrierDetailView({
   carrierId,
@@ -85,11 +86,8 @@ export default function CarrierDetailView({
             </dd>
           </div>
         </dl>
-        <div className="mt-6 border-t border-gray-900/5 px-6 py-6">
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            Download receipt <span aria-hidden="true">&rarr;</span>
-          </a>
-        </div>
+        {/* TODO: Show only if there is not a rewiew linked to the invoice */}
+        <CarrierReviewForm />
       </div>
     </div>
   );

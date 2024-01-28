@@ -85,6 +85,7 @@ export const CARRIERS_TABLE_DATA = [
     duration: "1h 05m",
     price: "$1,000",
     averageRating: "4.8",
+    hasReview: true,
   },
   {
     id: 2,
@@ -99,6 +100,7 @@ export const CARRIERS_TABLE_DATA = [
     duration: "3h 00m",
     price: "$1,500",
     averageRating: "4.5",
+    hasReview: false,
   },
   {
     id: 3,
@@ -113,6 +115,7 @@ export const CARRIERS_TABLE_DATA = [
     duration: "1h 45m",
     price: "$1,200",
     averageRating: "4.7",
+    hasReview: true,
   },
   {
     id: 4,
@@ -127,5 +130,6 @@ export const CARRIERS_TABLE_DATA = [
     duration: "2h 10m",
     price: "$1,300",
     averageRating: "4.9",
+    hasReview: false,
   },
 ];
