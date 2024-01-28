@@ -21,8 +21,8 @@ export default function Navbar({
       </div>
       <div className="flex items-center gap-2 sm:hidden">
         <Logo />
-        <span className="font-inter cursor-pointer text-xl font-semibold text-[#233047]">
-          infyToken
+        <span className="font-inter cursor-pointer text-sm font-semibold text-[#233047]">
+          Sistema de gestion
         </span>
       </div>
       {/* Search bar */}
@@ -35,8 +35,7 @@ export default function Navbar({
         />
       </div>
       <div className="flex items-center gap-x-4 gap-y-1.5">
-        {/* TODO: hacer funcionar */}
-        <Cog6ToothIcon className="h-6 w-6 text-[#637381] hover:cursor-pointer" />
+        {/* TODO: hacer funfcionar */}
         <div className="flex items-center gap-2">
           <div className="h-8 w-8 rounded-full bg-[#EDEDED]">
             <Image

@@ -53,7 +53,7 @@ export const NAVIGATION = [
   {
     alt: "orders",
     img: "/assets/admin/analytics-dashboard/bill.svg",
-    name: "Envios",
+    name: "Envios y Productos",
     svg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"

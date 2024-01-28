@@ -16,7 +16,7 @@ export default function Sidebar({
 }) {
   return (
     <div
-      className={`absolute top-0 z-20 h-max flex-col gap-16 overflow-hidden bg-white py-7 transition-all duration-1000 ease-in-out sm:relative sm:left-0 sm:flex sm:min-h-[851px] sm:ease-in-out lg:px-5 ${
+      className={`absolute top-0 z-20 h-max flex-col gap-16 overflow-hidden bg-white py-7 transition-all duration-1000 ease-in-out sm:relative sm:left-0 sm:flex sm:min-h-screen sm:ease-in-out lg:px-5 ${
         show ? "left-0 h-screen w-72 overflow-y-auto" : "-left-72 sm:left-0"
       }
     ${openSideBar ? "px-5 sm:w-72" : "px-3.5 sm:w-28"}
@@ -70,7 +70,9 @@ export default function Sidebar({
             >
               <div className="h-5 w-5">{data?.svg}</div>
               <span
-                className={`block ${openSideBar ? "block" : "sm:hidden "} `}
+                className={`block ${
+                  openSideBar ? "block" : "sm:hidden "
+                } whitespace-normal break-words`}
               >
                 {data?.name}
               </span>

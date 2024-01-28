@@ -29,9 +29,9 @@ export default function CarriersList() {
     replace(`${pathname}?${params.toString()}`);
   };
   return (
-    <div className="min-w-3/4 overflow-hidden pt-6">
+    <div className="sm:min-w-3/4 w-full overflow-hidden pt-6">
       <div className="flex flex-col items-center gap-4">
-        <div className="flex w-full items-center justify-between gap-x-6 px-8">
+        <div className="flex w-full flex-col items-center justify-between gap-x-6 gap-y-6 px-8 sm:flex-row">
           <CarrierListSelect />
           <span className="text-lg font-semibold text-[#212B36]">
             Ultimos pedidos ingresados

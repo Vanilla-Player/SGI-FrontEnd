@@ -12,7 +12,7 @@ export default function StatsHeader() {
     { name: "Probabilidad de fallo en entrega", value: "0.05%" },
   ];
   return (
-    <div className="relative flex flex-col gap-4 overflow-hidden rounded-xl bg-gradient-to-tl from-[#4E4BCF] to-[#7851BD] sm:flex-wrap sm:gap-12 lg:h-fit xl:flex-row xl:items-end xl:justify-between xl:gap-6">
+    <div className="relative flex flex-col gap-4 overflow-hidden bg-gradient-to-tl from-[#4E4BCF] to-[#7851BD] sm:flex-wrap sm:gap-12 lg:h-fit xl:flex-row xl:items-end xl:justify-between xl:gap-6">
       <div className="grid w-full grid-cols-1 sm:grid-cols-2 sm:flex-wrap lg:grid-cols-4">
         {stats.map((stat, statIdx) => (
           <div

@@ -1,3 +1,4 @@
+// Mock data
 export const TABLE_DATA = [
   {
     title: "Insurance",

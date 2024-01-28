@@ -23,7 +23,7 @@ export default function Carriers({
         }`}
       >
         <div
-          className={`flex w-full flex-row items-center justify-center gap-x-12 sm:max-w-[calc(100%)]`}
+          className={`flex w-full flex-col items-center justify-center gap-x-12 sm:max-w-[calc(100%)] sm:flex-row`}
         >
           <CarriersList />
           {searchParams?.id && (
