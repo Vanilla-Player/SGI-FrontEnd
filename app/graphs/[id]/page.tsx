@@ -1,5 +1,5 @@
 "use client";
-import DynamicGraph from "@/components/DynamicGrapgh";
+import DynamicGraph from "@/components/DynamicGraph";
 
 const Page = ({}: { params: { id: string } }) => {
   const data: Array<any> = [
