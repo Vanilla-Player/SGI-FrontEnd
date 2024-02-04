@@ -1,10 +1,16 @@
 import React from "react";
-import Card from "@/components/Card";
+import StorageList from "./components/StorageList";
 
 const Storage: React.FC = () => {
-  const contenType = "shelving";
-
-  return <Card contentType={contenType} dataToRender={null} />;
+  return (
+    <>
+      <div
+        className={`flex w-full flex-col items-center justify-center gap-x-12 sm:max-w-[calc(100%)] sm:flex-row`}
+      >
+        <StorageList />
+      </div>
+    </>
+  );
 };
 
 export default Storage;

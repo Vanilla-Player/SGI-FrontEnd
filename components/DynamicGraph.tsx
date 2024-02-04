@@ -9,9 +9,9 @@ interface DynamicGraph {
 const DynamicGraph: React.FC<DynamicGraph> = (props) => {
   const colors = {
     backgroundColor: "white",
-    lineColor: "#2962FF",
+    lineColor: "#7851BD",
     textColor: "black",
-    areaTopColor: "#2962FF",
+    areaTopColor: "#7851BD",
     areaBottomColor: "rgba(41, 98, 255, 0.28)",
   };
 

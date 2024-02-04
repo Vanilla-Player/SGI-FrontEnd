@@ -11,7 +11,7 @@ const OrderForm: React.FC = () => {
   return (
     <div className="flex w-full justify-center">
       <form className="flex w-full max-w-5xl flex-col p-5">
-        <div className=" flex flex-row justify-between">
+        <div className=" flex flex-col items-center justify-between md:flex-row">
           <label className="m-2 w-full max-w-md rounded-xl border-2 border-gray-300 bg-white p-2 text-center">
             Proveedor
             <input
@@ -41,7 +41,7 @@ const OrderForm: React.FC = () => {
         </div>
         <ProductList />
         <ProductAddModalForm toggleModal={toggleModal} open={addProductModal} />
-        <div className="self-end">
+        <div className="self-center md:self-end">
           <button
             type="submit"
             className="my-5 rounded-md bg-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"

@@ -20,21 +20,21 @@ const Page = ({}: { params: { id: string } }) => {
 
   return (
     <div className="flex h-screen w-screen justify-center p-2">
-      <div className="h-2/3 w-3/4 rounded-xl border-2 border-blue-600 bg-white p-5 shadow-2xl shadow-blue-500 ">
+      <div className="h-2/3 w-3/4 rounded-xl border-2 border-[#7851BD] bg-white p-5 shadow-2xl shadow-[#7851BD] ">
         <DynamicGraph data={data} />
         <div className="mt-10 flex justify-between">
-          <p className="rounded-xl border-2 border-blue-600 bg-white p-5 text-black shadow-2xl shadow-blue-500">
+          <p className="rounded-xl border-2 border-[#7851BD] bg-white p-5 text-black shadow-2xl shadow-[#7851BD]">
             Stock: {stock}
           </p>
-          <p className="rounded-xl border-2 border-blue-600 bg-white p-5 text-black shadow-2xl shadow-blue-500">
+          <p className="rounded-xl border-2 border-[#7851BD] bg-white p-5 text-black shadow-2xl shadow-[#7851BD]">
             Prediccion: {prediccion}
           </p>
           {diferencia < 0 ? (
-            <p className="rounded-xl border-2 border-blue-600 bg-white p-5 text-red-500 shadow-2xl shadow-blue-500">
+            <p className="rounded-xl border-2 border-[#7851BD] bg-white p-5 text-red-500 shadow-2xl shadow-[#7851BD]">
               Diferencia: {stock - prediccion}
             </p>
           ) : (
-            <p className="rounded-xl border-2 border-blue-600 bg-white p-5 text-green-500 shadow-2xl shadow-blue-500">
+            <p className="rounded-xl border-2 border-[#7851BD] bg-white p-5 text-green-500 shadow-2xl shadow-[#7851BD]">
               Diferencia: {stock - prediccion}
             </p>
           )}
