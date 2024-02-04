@@ -32,7 +32,7 @@ const Card: React.FC<Card> = (props) => {
 
   return (
     <div className="h-[250px] w-[300px]">
-      <div className="flex justify-center rounded-xl border-2 border-blue-600 bg-white shadow-2xl shadow-blue-500">
+      <div className="flex justify-center rounded-xl border-2 border-[#7851BD] bg-white shadow-2xl shadow-[#7851BD]">
         {contenToRender}
       </div>
     </div>
