@@ -12,7 +12,7 @@ const Graph: React.FC<Graph> = (props) => {
       <DynamicGraph data={data} />
       <div className="relative bottom-3 z-10  flex justify-end ">
         <Link
-          className="bg-[#986de1] border-2 border-black text-white text-sm p-1"
+          className="border-2 border-black bg-[#986de1] p-1 text-sm text-white"
           href={`graphs/1`}
         >
           See Graph
