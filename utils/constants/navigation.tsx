@@ -17,6 +17,25 @@ export const NAVIGATION = [
     ),
   },
   {
+    alt: "products",
+    img: "/assets/admin/analytics-dashboard/prod.svg",
+    name: "Productos",
+    svg: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        className="h-6 w-6 fill-[#233047] group-hover:fill-white"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M7.5 6v.75H5.513c-.96 0-1.764.724-1.865 1.679l-1.263 12A1.875 1.875 0 0 0 4.25 22.5h15.5a1.875 1.875 0 0 0 1.865-2.071l-1.263-12a1.875 1.875 0 0 0-1.865-1.679H16.5V6a4.5 4.5 0 1 0-9 0ZM12 3a3 3 0 0 0-3 3v.75h6V6a3 3 0 0 0-3-3Zm-3 8.25a3 3 0 1 0 6 0v-.75a.75.75 0 0 1 1.5 0v.75a4.5 4.5 0 1 1-9 0v-.75a.75.75 0 0 1 1.5 0v.75Z"
+          clip-rule="evenodd"
+        />
+      </svg>
+    ),
+  },
+  {
     alt: "graphs",
     img: "/assets/admin/analytics-dashboard/market.svg",
     name: "Graficos",
@@ -53,7 +72,7 @@ export const NAVIGATION = [
   {
     alt: "orders",
     img: "/assets/admin/analytics-dashboard/bill.svg",
-    name: "Envios y Productos",
+    name: "Pedidos",
     svg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -64,7 +83,7 @@ export const NAVIGATION = [
         <path
           fill-rule="evenodd"
           d="M12 1.5c-1.921 0-3.816.111-5.68.327-1.497.174-2.57 1.46-2.57 2.93V21.75a.75.75 0 0 0 1.029.696l3.471-1.388 3.472 1.388a.75.75 0 0 0 .556 0l3.472-1.388 3.471 1.388a.75.75 0 0 0 1.029-.696V4.757c0-1.47-1.073-2.756-2.57-2.93A49.255 49.255 0 0 0 12 1.5Zm3.53 7.28a.75.75 0 0 0-1.06-1.06l-6 6a.75.75 0 1 0 1.06 1.06l6-6ZM8.625 9a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0Zm5.625 3.375a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25Z"
-          clip-rule="evenodd"
+          clipRule="evenodd"
         />
       </svg>
     ),
@@ -84,7 +103,7 @@ export const NAVIGATION = [
         <path
           fill-rule="evenodd"
           d="m3.087 9 .54 9.176A3 3 0 0 0 6.62 21h10.757a3 3 0 0 0 2.995-2.824L20.913 9H3.087Zm6.163 3.75A.75.75 0 0 1 10 12h4a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1-.75-.75Z"
-          clip-rule="evenodd"
+          clipRule="evenodd"
         />
       </svg>
     ),
