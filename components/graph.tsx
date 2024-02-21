@@ -8,15 +8,14 @@ interface Graph {
 const Graph: React.FC<Graph> = (props) => {
   const { data } = props;
   return (
-    <div className="h-[200px] w-[275px] p-5">
-      <DynamicGraph data={data} />
-      <div className="relative bottom-3 z-10  flex justify-end ">
-        <Link
-          className="bg-[#986de1] border-2 border-black text-white text-sm p-1"
-          href={`graphs/1`}
-        >
-          See Graph
-        </Link>
+    <div>
+      <div className="h-[200px] w-[275px] p-5">
+        <DynamicGraph data={data} />
+        <div className="relative bottom-3 z-10  flex justify-end ">
+          <Link className="" href={`graphs/1`}>
+            See Graph
+          </Link>
+        </div>
       </div>
     </div>
   );
