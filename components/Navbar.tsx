@@ -1,8 +1,4 @@
-import {
-  Bars3Icon,
-  Cog6ToothIcon,
-  MagnifyingGlassIcon,
-} from "@heroicons/react/24/outline";
+import { Bars3Icon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import Logo from "@/components/Logo";
 import Image from "next/image";
 

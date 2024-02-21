@@ -1,13 +1,19 @@
-export default function Logo() {
+export default function Logo({
+  width = "8",
+  height = "8",
+}: {
+  width?: string;
+  height?: string;
+}) {
   return (
     <svg
-      width="32"
-      height="32"
+      width={width}
+      height={height}
       viewBox="0 0 32 32"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
-      className="h-8 w-8 cursor-pointer"
+      className={`h-${height} w-${width} cursor-pointer`}
     >
       <mask
         id="mask0_566_52282"
