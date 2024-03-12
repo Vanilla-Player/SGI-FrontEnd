@@ -100,25 +100,6 @@ export default function CarriersList() {
     },
   ];
 
-  // Define some data
-  const data = [
-    {
-      carrier: {
-        name: "Carrier 1",
-        imageUrl:
-          "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-      },
-      lastDateFrom: "2022-01-01",
-      estimateTime: "2 days",
-      duration: "1 day",
-      status: "Delivered",
-      price: "$100",
-      averageRating: "4.5",
-      hasReview: true,
-      id: "1",
-    },
-  ];
-
   const handleCarrierViewClick = (id: number) => {
     const prevParams = searchParams.get("id");
     const params = new URLSearchParams(searchParams);
@@ -145,7 +126,7 @@ export default function CarriersList() {
             Crear nuevo transportista <PlusCircleIcon className="h-5 w-5" />
           </button>
         </div>
-        <Table data={data} columns={columns} />
+        <Table data={CARRIERS_TABLE_DATA} columns={columns} />
       </div>
       <CarrierCreateModalForm
         toggleModal={toggleModal}

@@ -6,19 +6,8 @@ import {
   flexRender,
 } from "@tanstack/react-table";
 
-import type {
-  ColumnDef,
-  Row,
-  Table as ReactTable,
-  PaginationState,
-} from "@tanstack/react-table";
+import type { ColumnDef, Row, PaginationState } from "@tanstack/react-table";
 
-import {
-  ChevronDoubleLeftIcon,
-  ChevronDoubleRightIcon,
-  ChevronLeftIcon,
-  ChevronRightIcon,
-} from "@heroicons/react/24/outline";
 import { classNames } from "@/utils/support/style";
 
 interface ReactTableProps<T extends object> {
