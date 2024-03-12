@@ -1,12 +1,13 @@
 "use client";
 
-import { CARRIERS_TABLE_DATA } from "@/utils/constants/tableData";
 import { EyeIcon, PlusCircleIcon } from "@heroicons/react/24/outline";
-import Image from "next/image";
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
 import CarrierListSelect from "./CarrierListSelect";
 import CarrierCreateModalForm from "./CreateModalForm";
 import { useState } from "react";
+import Table from "@/components/Common/Table";
+import { CARRIERS_TABLE_DATA } from "@/utils/constants/tableData";
+import Image from "next/image";
 
 export default function CarriersList() {
   const [openCreateModal, setOpenCreateModal] = useState(false);
@@ -17,6 +18,106 @@ export default function CarriersList() {
   const toggleModal = () => {
     setOpenCreateModal(!openCreateModal);
   };
+
+  // Define the columns for the table
+  const columns = [
+    {
+      header: "Transportista",
+      id: "carrier",
+      accessorKey: "carrier",
+      cell: ({ row }: any) => {
+        console.log(row);
+
+        return (
+          <div className="flex items-center gap-3">
+            <div className="">
+              <Image
+                src={row.original.carrier.imageUrl}
+                alt="hepta-brown"
+                className="min-h-[32px] min-w-[32px] rounded-full"
+                height={32}
+                width={32}
+              />
+            </div>
+            <div className="flex flex-col whitespace-nowrap">
+              <span className="text-xs text-[#212B36] md:text-sm">
+                {row.original.carrier.name}
+              </span>
+            </div>
+          </div>
+        );
+      },
+    },
+    {
+      header: "Ultima fecha de salida",
+      id: "lastDateFrom",
+      accessorKey: "lastDateFrom",
+    },
+    {
+      header: "Tiempo estimado de llegada",
+      id: "estimateTime",
+      accessorKey: "estimateTime",
+    },
+    {
+      header: "Tiempo de entrega real",
+      id: "duration",
+      accessorKey: "duration",
+    },
+    {
+      header: "Estado de entrega",
+      id: "status",
+      accessorKey: "status",
+    },
+    {
+      header: "Precio",
+      id: "price",
+      accessorKey: "price",
+    },
+    {
+      header: "Puntaje promedio",
+      id: "averageRating",
+      accessorKey: "averageRating",
+    },
+    {
+      header: "Tiene resena",
+      id: "hasReview",
+      accessorKey: "hasReview",
+      cell: ({ row }: any) => (row.original.hasReview ? "Si" : "No"), // Use Cell to handle custom rendering
+    },
+    {
+      header: "Acciones",
+      id: "actions",
+      accessorKey: "id",
+      cell: ({ row }: any) => (
+        <button
+          type="button"
+          className="mx-4 rounded bg-indigo-600 px-2 py-0.5 text-xs font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600"
+          onClick={() => handleCarrierViewClick(row.original.id)}
+        >
+          <EyeIcon className="h-5 w-5" aria-hidden="true" />
+        </button>
+      ),
+    },
+  ];
+
+  // Define some data
+  const data = [
+    {
+      carrier: {
+        name: "Carrier 1",
+        imageUrl:
+          "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      },
+      lastDateFrom: "2022-01-01",
+      estimateTime: "2 days",
+      duration: "1 day",
+      status: "Delivered",
+      price: "$100",
+      averageRating: "4.5",
+      hasReview: true,
+      id: "1",
+    },
+  ];
 
   const handleCarrierViewClick = (id: number) => {
     const prevParams = searchParams.get("id");
@@ -29,7 +130,7 @@ export default function CarriersList() {
     replace(`${pathname}?${params.toString()}`);
   };
   return (
-    <div className="sm:min-w-3/4 w-full overflow-hidden pt-6">
+    <div className="w-full">
       <div className="flex flex-col items-center gap-4">
         <div className="flex w-full flex-col items-center justify-between gap-x-6 gap-y-6 px-8 sm:flex-row">
           <CarrierListSelect />
@@ -44,102 +145,7 @@ export default function CarriersList() {
             Crear nuevo transportista <PlusCircleIcon className="h-5 w-5" />
           </button>
         </div>
-
-        <div className="xs:max-w-xl mt-1 w-full max-w-xl overflow-x-scroll scrollbar-thin scrollbar-track-[#EDEDED] scrollbar-thumb-[#7851BD] sm:max-w-xl md:max-w-7xl md:overflow-auto 2xl:max-w-none">
-          <table className="font-inter w-full table-auto border-separate border-spacing-y-1.5 overflow-scroll text-left md:overflow-auto">
-            <thead className="w-full rounded-lg bg-[#222E3A]/[6%] text-base font-semibold text-white">
-              <tr className="">
-                <th className="whitespace-nowrap rounded-l-lg py-3 pl-3 text-base font-normal text-[#212B36] sm:text-sm">
-                  Transportista
-                </th>
-                <th className="whitespace-nowrap py-3 pl-2 text-base font-normal text-[#212B36] sm:text-sm">
-                  Ultima fecha de salida
-                </th>
-                <th className="whitespace-nowrap py-3 pl-2 text-base font-normal text-[#212B36] sm:text-sm">
-                  Tiempo estimado de llegada
-                </th>
-                <th className="whitespace-nowrap py-3 pl-2 text-base font-normal text-[#212B36] sm:text-sm">
-                  Tiempo de entrega real
-                </th>
-                <th className="whitespace-nowrap py-3 pl-2 text-base font-normal text-[#212B36] sm:text-sm">
-                  Estado de entrega
-                </th>
-                <th className="whitespace-nowrap py-3 pl-2 text-base font-normal text-[#212B36] sm:text-sm">
-                  Precio
-                </th>
-                <th className="whitespace-nowrap py-3 pl-2 text-base font-normal text-[#212B36] sm:text-sm">
-                  Puntaje promedio
-                </th>
-                <th className="whitespace-nowrap py-3 pl-2 text-base font-normal text-[#212B36] sm:text-sm">
-                  Tiene resena
-                </th>
-                <th className="whitespace-nowrap rounded-r-lg py-3 pl-2 text-base font-normal text-[#212B36]  sm:text-sm">
-                  <span className="sr-only">Actions</span>
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {CARRIERS_TABLE_DATA.map((data, index) => (
-                <tr
-                  key={index}
-                  className="cursor-pointer bg-[#f6f8fa] drop-shadow-[0_0_10px_rgba(34,46,58,0.02)] hover:drop-shadow-2xl"
-                >
-                  <td className="rounded-l-lg border-y border-l border-[#7851BD]/20 py-5 pl-3 text-sm font-normal text-[#637381]">
-                    <div className="relative flex items-center gap-3">
-                      <div className="">
-                        <Image
-                          src={data?.carrier.imageUrl}
-                          alt="hepta-brown"
-                          className="min-h-[32px] min-w-[32px] rounded-full"
-                          height={32}
-                          width={32}
-                        />
-                      </div>
-                      <div className="flex flex-col whitespace-nowrap">
-                        <span className="text-xs text-[#212B36] md:text-sm">
-                          {data?.carrier.name}
-                        </span>
-                        <span className="mt-1 text-xs text-[#637381] md:text-sm">
-                          {data?.description}
-                        </span>
-                      </div>
-                    </div>
-                  </td>
-                  <td className="border-x-0 border-y border-[#7851BD]/20 px-2 py-5 text-xs  font-normal  text-[#637381] md:text-sm">
-                    {data.lastDateFrom}
-                  </td>
-                  <td className="border-x-0 border-y border-[#7851BD]/20 px-2 py-5 text-center text-xs  font-normal text-[#637381] md:text-sm">
-                    {data.estimateTime}
-                  </td>
-                  <td className="border-x-0 border-y border-[#7851BD]/20 px-2 py-5 text-center text-xs  font-normal text-[#637381] md:text-sm">
-                    {data.duration}
-                  </td>
-                  <td className="border-x-0 border-y border-[#7851BD]/20 px-2 py-5 text-xs  font-normal text-[#637381] md:text-sm">
-                    {data.status}
-                  </td>
-                  <td className="border-x-0 border-y border-[#7851BD]/20 px-2 py-5 text-xs  font-normal text-[#637381] md:text-sm">
-                    {data.price}
-                  </td>
-                  <td className="border-x-0 border-y border-[#7851BD]/20 px-2 py-5 text-center text-xs  font-normal text-[#637381] md:text-sm">
-                    {data.averageRating}
-                  </td>
-                  <td className="border-x-0 border-y border-[#7851BD]/20 px-2 py-5 text-center text-xs  font-normal text-[#637381] md:text-sm">
-                    {data.hasReview ? "Si" : "No"}
-                  </td>
-                  <td className="space-x-4 rounded-r-lg border-y border-r border-[#7851BD]/20 px-2 py-5 text-xs font-normal text-[#637381] md:text-sm">
-                    <button
-                      type="button"
-                      className="mx-4 rounded bg-indigo-600 px-2 py-0.5 text-xs font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600"
-                      onClick={() => handleCarrierViewClick(data?.id)}
-                    >
-                      <EyeIcon className="h-5 w-5" aria-hidden="true" />
-                    </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <Table data={data} columns={columns} />
       </div>
       <CarrierCreateModalForm
         toggleModal={toggleModal}

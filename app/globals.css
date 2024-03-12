@@ -38,3 +38,24 @@ td {
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
 }
+
+@layer components {
+  .primary-table {
+    @apply w-full table-auto border-separate border-spacing-y-1.5 overflow-scroll text-left md:overflow-auto;
+  }
+    .primary-table thead {
+      @apply w-full rounded-lg bg-[#222E3A]/[6%] text-base font-semibold text-white;
+    }
+    .primary-table thead tr th {
+      @apply whitespace-nowrap rounded-l-lg py-3 pl-3 text-base text-center font-normal text-[#212B36] sm:text-sm;      
+    }
+    .primary-table tbody tr {
+      @apply cursor-pointer bg-[#f6f8fa] hover:drop-shadow;
+    }
+    .primary-table tbody tr td {
+      @apply border-x-0 border-y border-[#7851BD]/20 px-2 py-5 text-center text-xs  font-normal text-[#637381] md:text-sm;
+    }
+    .primary-table tbody tr td:last-child {
+      @apply space-x-4 rounded-r-lg border-y border-r border-[#7851BD]/20 px-2 py-5 text-xs font-normal text-[#637381] md:text-sm;
+    }
+}

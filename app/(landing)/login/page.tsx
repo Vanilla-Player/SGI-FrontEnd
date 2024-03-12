@@ -3,7 +3,7 @@ import Logo from "@/components/Logo";
 export default function LoginPage() {
   return (
     <>
-      <div className="flex h-full min-h-full w-full flex-1 flex-col justify-center sm:px-6 lg:px-8">
+      <div className="flex h-full min-h-full w-full flex-1 flex-col justify-center bg-gray-50 sm:px-6 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
           <div className="flex w-full items-center justify-center">
             <Logo width="12" height="12" />

@@ -25,12 +25,12 @@ export default function CarrierDetailView({
   };
 
   return (
-    <div className="relative max-w-lg pt-8 lg:col-start-3 lg:row-end-1">
+    <div className="relative max-w-lg lg:col-start-3 lg:row-end-1">
       <h2 className="sr-only">{carrierId}</h2>
       <div className="rounded-lg bg-gray-50 shadow-sm ring-1 ring-gray-900/5">
         <button
           onClick={() => handleDetailViewClose()}
-          className="absolute right-6 top-12"
+          className="absolute right-6 top-4"
         >
           <XMarkIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
         </button>
