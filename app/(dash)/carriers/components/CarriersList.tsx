@@ -26,8 +26,6 @@ export default function CarriersList() {
       id: "carrier",
       accessorKey: "carrier",
       cell: ({ row }: any) => {
-        console.log(row);
-
         return (
           <div className="flex items-center gap-3">
             <div className="">
