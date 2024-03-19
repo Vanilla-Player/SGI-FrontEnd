@@ -1,12 +1,11 @@
 import { Bars3Icon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import Logo from "@/components/Logo";
 import Image from "next/image";
+import { useLayoutStore, useUser } from "@/lib/store";
 
-export default function Navbar({
-  toggleSideBar,
-}: {
-  toggleSideBar: () => void;
-}) {
+export default function Navbar() {
+  const { toggleSideBar } = useLayoutStore();
+  const { username, avatar_url } = useUser();
   return (
     <div className="flex w-full items-center justify-between bg-white px-4 py-5 sm:justify-end sm:gap-11 sm:px-7">
       <div
@@ -36,13 +35,14 @@ export default function Navbar({
           <div className="h-8 w-8 rounded-full bg-[#EDEDED]">
             <Image
               alt="user picture"
-              src="/assets/admin/default-user.png"
+              src={avatar_url}
               width={32}
               height={32}
+              className="h-full w-full rounded-full"
             />
           </div>
           <span className="font-inter text-sm font-semibold text-[#637381]">
-            Admin
+            {username}
           </span>
         </div>
       </div>

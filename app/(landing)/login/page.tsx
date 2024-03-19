@@ -1,6 +1,39 @@
+"use client";
 import Logo from "@/components/Logo";
+import { useUser } from "@/lib/store";
+import { useSupabaseClient } from "@/utils/supabase/client";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
+  const router = useRouter();
+  const { setUserData } = useUser();
+  const supabase = useSupabaseClient();
+
+  const login = async (email: string, password: string) => {
+    // TODO: add validations and error handling or a library that handles it
+    const { error, data } = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    });
+    if (error) {
+      console.error(error);
+      return;
+    }
+    const { data: userData, error: userError } = await supabase
+      .from("profiles")
+      .select()
+      .eq("id", data.user.id)
+      .single();
+
+    if (userError) {
+      console.error(userError);
+      return;
+    }
+
+    setUserData(userData);
+    router.push("/dashboard");
+  };
+
   return (
     <>
       <div className="flex h-full min-h-full w-full flex-1 flex-col justify-center bg-gray-50 sm:px-6 lg:px-8">
@@ -15,7 +48,7 @@ export default function LoginPage() {
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-[480px]">
           <div className="bg-white px-6 py-12 shadow sm:rounded-lg sm:px-12">
-            <form className="space-y-6" action="#" method="POST">
+            <form className="space-y-6" method="POST">
               <div>
                 <label
                   htmlFor="email"
@@ -83,6 +116,7 @@ export default function LoginPage() {
               <div>
                 <button
                   type="submit"
+                  onClick={() => login("admin@test.com", "123")}
                   className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
                   Ingresar
@@ -104,7 +138,6 @@ export default function LoginPage() {
                   </span>
                 </div>
               </div>
-
               <div className="mt-6 grid gap-4">
                 <a
                   href="#"

@@ -1,9 +1,10 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import { Inter } from "next/font/google";
 import "@fontsource/poppins";
 import Sidebar from "@/components/Sidebar";
 import Navbar from "@/components/Navbar";
+import { useLayoutStore } from "@/lib/store";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,14 +13,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [show, setShow] = useState(false);
-  const [openSideBar, setSideBar] = useState(false);
-  const expandSidebar = () => {
-    setSideBar(!openSideBar);
-  };
-  const toggleSideBar = () => {
-    setShow(!show);
-  };
+  const { show, openSideBar } = useLayoutStore();
+
   const renderChildren = () => {
     return React.Children.map(children, (child) => {
       return React.cloneElement(child as React.ReactElement<any>, {
@@ -37,15 +32,9 @@ export default function RootLayout({
           }`}
         >
           <div className="flex w-full ">
-            <Sidebar
-              show={show}
-              openSideBar={openSideBar}
-              toggleSideBar={toggleSideBar}
-              expandSidebar={expandSidebar}
-            />
-
+            <Sidebar />
             <div className="flex w-full flex-col">
-              <Navbar toggleSideBar={toggleSideBar} />
+              <Navbar />
               {/* Main content */}
               {renderChildren()}
             </div>

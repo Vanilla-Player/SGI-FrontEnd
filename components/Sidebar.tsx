@@ -2,18 +2,19 @@ import { NAVIGATION } from "@/utils/constants/navigation";
 import { ChevronLeftIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Logo from "./Logo";
+import { useLayoutStore } from "@/lib/store";
+import { useSupabaseClient } from "@/utils/supabase/client";
+import { useRouter } from "next/navigation";
 
-export default function Sidebar({
-  show,
-  openSideBar,
-  expandSidebar,
-  toggleSideBar,
-}: {
-  show: boolean;
-  openSideBar: boolean;
-  expandSidebar: () => void;
-  toggleSideBar: () => void;
-}) {
+export default function Sidebar() {
+  const { show, openSideBar, toggleSideBar, expandSidebar } = useLayoutStore();
+  const { push } = useRouter();
+
+  const logout = async () => {
+    await useSupabaseClient().auth.signOut();
+    push("/login");
+  };
+
   return (
     <div
       className={`absolute top-0 z-20 h-max flex-col gap-16 overflow-hidden bg-white py-7 transition-all duration-1000 ease-in-out sm:relative sm:left-0 sm:flex sm:min-h-screen sm:ease-in-out lg:px-5 ${
@@ -79,6 +80,22 @@ export default function Sidebar({
             </a>
           ))}
         </div>
+      </div>
+      <div className="flex w-full justify-center">
+        <button className="" onClick={() => logout()}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            className="h-6 w-6"
+          >
+            <path
+              fillRule="evenodd"
+              d="M16.5 3.75a1.5 1.5 0 0 1 1.5 1.5v13.5a1.5 1.5 0 0 1-1.5 1.5h-6a1.5 1.5 0 0 1-1.5-1.5V15a.75.75 0 0 0-1.5 0v3.75a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V5.25a3 3 0 0 0-3-3h-6a3 3 0 0 0-3 3V9A.75.75 0 1 0 9 9V5.25a1.5 1.5 0 0 1 1.5-1.5h6ZM5.78 8.47a.75.75 0 0 0-1.06 0l-3 3a.75.75 0 0 0 0 1.06l3 3a.75.75 0 0 0 1.06-1.06l-1.72-1.72H15a.75.75 0 0 0 0-1.5H4.06l1.72-1.72a.75.75 0 0 0 0-1.06Z"
+              clipRule="evenodd"
+            />
+          </svg>
+        </button>
       </div>
     </div>
   );
