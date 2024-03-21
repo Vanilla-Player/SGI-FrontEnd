@@ -1,6 +1,6 @@
 export const CARRIER_FIELDS = [
   {
-    name: "firstName",
+    name: "first_name",
     label: "Nombre",
     className: "sm:col-span-3",
     validations: {
@@ -8,7 +8,7 @@ export const CARRIER_FIELDS = [
     },
   },
   {
-    name: "lastName",
+    name: "last_name",
     label: "Apellido",
     className: "sm:col-span-3",
     validations: {
@@ -35,9 +35,17 @@ export const CARRIER_FIELDS = [
     },
   },
   {
+    name: "country",
+    label: "Pais",
+    className: "sm:col-span-3",
+    validations: {
+      required: "Este campo es requerido",
+    },
+  },
+  {
     name: "address",
     label: "Direccion",
-    className: "sm:col-span-full",
+    className: "sm:col-span-3",
     validations: {
       required: "Este campo es requerido",
     },
@@ -45,7 +53,7 @@ export const CARRIER_FIELDS = [
   {
     name: "city",
     label: "Ciudad",
-    className: "sm:col-span-3",
+    className: "sm:col-span-2",
     validations: {
       required: "Este campo es requerido",
     },

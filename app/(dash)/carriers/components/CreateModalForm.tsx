@@ -5,6 +5,8 @@ import { PlusCircleIcon } from "@heroicons/react/24/outline";
 import { Input } from "@/components/Common/Input";
 import Form from "@/components/Common/Form";
 import { CARRIER_FIELDS } from "@/utils/constants/modals/carriers";
+import { ICarrier } from "@/lib/interfaces";
+import { useSupabaseClient } from "@/utils/supabase/client";
 
 export default function CarrierCreateModalForm({
   toggleModal,
@@ -13,6 +15,17 @@ export default function CarrierCreateModalForm({
   toggleModal: () => void;
   open: boolean;
 }) {
+  const supabase = useSupabaseClient();
+  const handleSubmit = async (data: ICarrier) => {
+    const { error } = await supabase.from("carriers").insert(data);
+    console.log(data);
+    if (error) {
+      console.log(error);
+      return;
+    }
+    toggleModal();
+  };
+
   return (
     <Transition.Root show={open} as={Fragment}>
       <Dialog as="div" className="relative z-20" onClose={toggleModal}>
@@ -56,23 +69,14 @@ export default function CarrierCreateModalForm({
                     </p>
                     <Form
                       className="mt-4 grid max-w-3xl grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6"
-                      onSubmit={() => console.log("submiting...")}
-                      defaultValues={{
-                        firstName: "",
-                        lastName: "",
-                        email: "",
-                        phone: "",
-                        address: "",
-                        city: "",
-                        state: "",
-                        zip: "",
-                      }}
+                      onSubmit={handleSubmit}
+                      defaultValues={{}}
                     >
                       {CARRIER_FIELDS.map(
                         (el: {
                           name: string;
                           label: string;
-                          className: string | null;
+                          className?: string | null;
                           validations?: any;
                         }) => (
                           <Input

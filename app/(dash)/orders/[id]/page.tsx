@@ -1,5 +1,6 @@
 "use client";
-import OrderForm from "@/app/orders/components/orderForm";
+
+import OrderForm from "../components/orderForm";
 
 const Page = ({}: { params: { id: string } }) => {
   return (

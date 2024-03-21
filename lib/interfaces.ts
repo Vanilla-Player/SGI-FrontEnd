@@ -14,3 +14,14 @@ export interface IUserProfile {
   updated_at: string;
   setUserData: (data: IUserProfile) => void;
 }
+
+export interface ICarrier {
+  id?: string | null;
+  first_name: string;
+  last_name: string;
+  email?: string | null;
+  phone: string;
+  address: string;
+  city: string;
+  state: string;
+}
